@@ -1,0 +1,100 @@
+<html>
+<head>
+	<title>birth form</title>
+	<link  href="mystyles.css" rel="stylesheet" type="text/css" />
+</head>
+<body id="bockground">
+ <?php
+session_start();
+include("connection.php");
+
+?>
+<table>
+<div id="divHeader">
+<?php
+require("header.php");
+?>
+</div>
+<div id="divNav">
+<?php
+require("kebeleregistrarmenu.php");
+?></div>
+
+<tr><td><div id="divSideContentLeft">
+ 
+<?php
+require("kebelemenu2.php");
+?>
+        </div>
+
+</td>   
+<td>
+	<div id="divContentCenter">
+ 
+	<form  action="marriage.php" method="post">
+		<tr><td>marrage id:</td><td>
+		<input type="text" name="marrageid" value=""/></td></tr>
+		<tr><td> birthid:</td><td>
+		<input type="text" name="birthid" value=""/></td></tr>
+		<tr><td> hasbandfname:</td><td>
+		<input type="text" name="hasbandfname" value=""/></td></tr>
+		<tr><td> hasbandlname:</td><td>
+		<input type="text" name="hasbandlname" value=""/></td></tr>
+		
+		<tr><td>hasbandage:</td><td>
+		<input type="text" name="hasbandage" value=""/></td></tr>
+		
+		<tr><td> wifefname:</td><td>
+		<input type="text" name="wifefname" value=""/></td></tr>
+		<tr><td>wifelname:</td><td>
+		<input type="text" name="wifelname" style="font-size:12pt;color:black;border:1px solid gray;padding:2px; width:140px;">
+		</td></tr>
+		
+		<tr><td>wifeage:</td><td>
+		<input type="date" name="wifeage" value=""/></td></tr>
+		<tr><td> marraigedate:</td><td>
+		<input type="text" name="marraigedate" value=""/></td></tr>
+		<tr><td> marraigecondition:</td><td>
+		<input type="text" name="marraigecondition" value=""/></td></tr>		
+			</form>
+			<?php
+     if(isset($_POST['register']))
+     {
+		
+		$marrageid=$_POST['marrageid'];
+		 $birthid=($_POST['birthid']);
+		 $hasbandfname=$_POST['hasbandfname'];
+		$hasbandlname=$_POST['hasbandlname'];
+		$hasbandage=$_POST['hasbandage'];
+		 $region=($_POST['wifefname']);
+		 $wifefname=$_POST['wifelname'];
+		$wifeage=$_POST['wifeage'];
+		$marraigedate=$_POST['marraigedate'];
+		$marraigecondition=$_POST['marraigecondition'];
+		 
+	//insert data in to the table
+$sql="INSERT INTO marrigetable(marrageid,birthid,hasbandfname,hasbandlname,hasbandage,wifefname,wifelname,wifeage,marraigedate,marraigecondition) VALUES('$marrageid','$birthid','$hasbandfname','$hasbandlname','$regdate','$region','$zone','$city','$woreda','$kebele','1')";
+  mysql_query($sql) or die(mysql_error());
+  
+	if(!$sql)
+	{
+		echo "<font size='20'>Username exit before you must enter other!!!</font";
+		
+	}
+	else
+	{
+		echo "<font size='10'>born baby successfully registered!!!</font>";
+		
+	}
+		}	
+  ?>
+		</div>
+		</td>
+		
+		
+		
+		</table>
+
+	
+</body>
+</html>

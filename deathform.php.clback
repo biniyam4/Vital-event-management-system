@@ -1,0 +1,191 @@
+<?php
+
+include("connection.php");
+
+?>
+
+
+<html>
+<head>
+	<title>VITAL EVENT REGISTRATION MANEGMENT SYSTEM</title>
+	<link  href="mystyles.css" rel="stylesheet" type="text/css" />
+</head>
+<body id="bockground">
+
+<table>
+<div id="divHeader">
+<?php
+require("header.php");
+?>
+</div>
+<div id="divNav">
+<?php
+require("kebeleregistrarmenu.php");
+?></div>
+
+<tr><td><div id="divSideContentLeft">
+<?php
+require("kebelemenu2.php");
+?>
+ 
+
+        </div>
+
+</td>   
+
+ 
+<td>
+	<div id="divContentCenter">
+	<form> search birth id<input type="text" name="get">
+	     
+    
+	
+    <input type="submit" name="submitlogin" value="Search" />
+ </form>
+		<form action="birthreg_form.php" method="post"  enctype="multipart/form-data">
+        <h4>death registration page</h4>
+        <?php 
+            if (isset($_GET["submitlogin"]))
+              {
+              $jid=$_GET["get"];
+              $get_job = "select * from birthtable where b_id='$jid'";
+              $run_job = mysql_query($get_job,$con);
+              if(mysql_affected_rows($con))
+              {
+			  while($row_job=mysql_fetch_array($run_job)) 
+              {
+              $jid=$row_job['b_id']; 
+              $babyname=$row_job['baby_name'];
+              $faname=$row_job['fa_name']; 
+              $sex=$row_job['sex'];
+              $nationality=$row_job['nationality'];
+              $birthdate=$row_job['birth_date']; 
+              $birth_place=$row_job['birth_place']; 
+               }	
+               ?>
+<table>
+<tr>
+<td><input type="text" name="uid" readonly value="<?php echo "$jid";?>" placeholder="birth id"/></td>
+</tr>
+<tr>
+<td><input type="text" name="babyname" readonly value="<?php echo "$babyname";?>" placeholder="name"/></td>
+</tr><tr><td>
+<input type="text" name="faname" readonly value="<?php echo "$faname";?>" placeholder="fathername"/>
+</td></tr>
+<tr><td>
+<input type="text" name="sex" readonly value="<?php echo "$sex"; ?>" placeholder="sex"/>
+
+</td></tr>
+
+<tr><td> <input type="text" name="nationality" readonly value="<?php echo "$nationality"; ?>" placeholder="nationality"/>
+</td> </tr>
+<tr><td> <input type="text" name="birthdate" readonly value="<?php echo "$birthdate"; ?>" placeholder="birthdate"/>
+</td> </tr>
+<tr><td>   <input type="text" name="birthplace" readonly value="<?php echo "$birth_place"; ?>" placeholder="birth place"/> </td> </tr>
+
+<tr><td> date of death</td><td>
+<input type="date" name="deathdate" pattern="[A-Za-z]+"  placeholder="date of death " required="" style="font-size:12pt;color:black;border:1px solid gray;padding:2px; width:230px;"></td></tr>
+<tr><td> work position</td><td>
+<input type="text" name="workposition" pattern="[A-Za-z]+"  placeholder="work position " required="" style="font-size:12pt;color:black;border:1px solid gray;padding:2px; width:230px;"></td></tr>
+<tr><td>marraige status:</td><td>
+
+<select name="marragestatus" style="font-size:12pt;color:black;border:1px solid gray;padding:2px; width:140px;">
+<option >--Select status</option>
+<option>married</option>
+<option>unmarried</option></select></td></tr>
+
+<tr><td>death region:</td><td>
+
+<select name="region" style="font-size:12pt;color:black;border:1px solid gray;padding:2px; width:140px;">
+<option>--Select region--</option>
+<option>amhara</option>
+<option>tgiray</option>
+<option>oromia</option>
+<option>ganbela</option>
+<option>harar</option>
+<option>somalia</option>
+<option>debub</option>
+<option>benshangul</option>
+<option>harar</option>
+</select></td></tr>
+
+<tr><td> death woreda</td><td>
+<input type="text" name="deatworeda" pattern="[A-Za-z]+"  placeholder="death woreda " required="" style="font-size:12pt;color:black;border:1px solid gray;padding:2px; width:230px;"></td></tr>
+<tr><td> death city</td><td>
+<input type="text" name="deathcity" pattern="[A-Za-z]+"  placeholder="death city " required="" style="font-size:12pt;color:black;border:1px solid gray;padding:2px; width:230px;"></td></tr>
+<tr><td> death kebele</td><td>
+<input type="text" name="deathkebele" pattern="[A-Za-z]+"  placeholder="deathkebele " required="" style="font-size:12pt;color:black;border:1px solid gray;padding:2px; width:230px;"></td></tr>
+<tr><td> death reason</td><td>
+<input type="text" name="deathreason" pattern="[A-Za-z]+"  placeholder="death reason " required="" style="font-size:12pt;color:black;border:1px solid gray;padding:2px; width:230px;"></td></tr>
+
+
+<input type="submit" name="submit" value="register!"/>
+
+</table>
+               <?php
+			  }
+			  else
+			  echo"No Record Found";
+              
+            ?>
+       
+    </form>
+    
+    <?php
+          if(isset($_POST["submit"]))
+      {
+          $uid=$_POST["uid"];
+          $babyname=$_POST["babyname"];
+          $faname=$_POST["faname"];
+          $sex=$_POST["sex"];
+          $nationality=$_POST["nationality"];
+          $birthdate=$_POST["birthdate"];
+          $birthplace=$_POST["birthplace"];
+          $deathdate=$_POST["deathdate"];
+          $workposition=$_POST["workposition"];
+           $marragestatus=$_POST["marragestatus"];
+          $region=$_POST["region"];
+          $deathworeda=$_POST["deathworeda"];
+          $deathcity=$_POST["deathcity"];
+          $deathkebele=$_POST["deathkebele"];
+          $deathreason=$_POST["deathreason"];
+          if($jobidentity!=null){
+
+
+
+if($con)
+{
+         $sql="insert into death_table values('$uid','$babyname','$faname','$sex','$nationality','$birthdate'
+          ,'$birthplace','$deathdate','$workposition','$marragestatus','$region','$deathworeda','$deathcity','$deathkebele','$deathreason')";
+          $inserted=mysql_query($sql);
+          if($inserted)
+          {
+
+            echo "<script> alert('data inserted successfully!') </script>";
+            echo "<script> window.open('deathform.php') </script>";
+
+         }
+         else
+          echo "<script> alert('data not inserted successfully!').mysql_error()  </script>";
+       } } 
+          else
+          echo "<script> alert('First Fill all data first!').mysql_error() </script>";  
+     }
+  ?>
+		
+		
+	</div></td>
+	<td>
+<div id="divSideContentRight">
+	
+</div>
+</td>
+</tr>
+
+<tr><td><div id="divFooter"><?php
+require("footer.php");
+
+?></div></td></tr>
+</table>
+</body>
+</html>

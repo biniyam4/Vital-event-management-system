@@ -1,0 +1,254 @@
+
+#bockground {
+	background-color:#cac8f7;
+	
+}
+
+#divHeader {
+		
+		display:block;
+		width:1230px;
+		margin-top:30px;
+		margin-left:43px;
+		margin-right:-706px;
+		margin-bottom: 40px;
+border-top-right-radius: 10px;
+		margin-bottom:30px;
+}
+#divNav 
+{
+		background:lightcyan;
+		display:block;
+		width:1239px;
+		height:50px;
+		border:0px;
+		opacity:.8;
+		font-family:Giorgia;
+		font-size:1.2em;
+		margin-left:85px;
+		margin-right:-16px;
+		margin-top: -30px;
+		}
+		#all{
+			margin-left: -30px;
+	
+			
+		}
+#divNav	ul {
+ 	list-style-type:none;
+	text-align:center;
+	}
+#divNav ul li {
+	float:left;
+	width: 190px;
+	}
+
+#divNav ul li a {
+	display:block;
+	height:30px;
+	line-height:30px;
+	width:195px;
+	font-size:1.01em;
+	font-weight:bold;
+	color:SaddleBrown;
+	text-align:center;
+	vertical-align:middle;
+	text-decoration:none;
+	margin-top:10px;
+	margin-bottom:0px;
+	margin-left:40px;
+	margin-right:-40px;	
+	border:0px solid #000122;
+	
+	}
+#divNav ul li a:hover {
+	
+	border:0px;
+	
+	background-color:#7bd9a6;
+	}
+#divNav ul li a:active {
+	color:#ff0000;
+	border:1px solid #0fb4e7;
+	background-color:#0fb4e7;
+	}	
+#divNav ul li:hover ul li a {
+	visibility:visible;
+	color: #ffffff;
+	border:0px;
+	width: 190px;
+
+	}	
+
+#divNav ul li ul li 
+{
+	float: none;
+}
+#divNav ul li ul li a {
+	display:block;
+	height:25px;
+	width: 160px;
+	line-height:25px;
+	background:#070705;
+	color:SaddleBrown ;
+	text-align: left;
+	text-decoration:none;
+	margin:0 auto;
+	border-bottom:1px solid #fff;
+	color: #332f26;
+	font-size:1em;
+	visibility:hidden;
+	}
+#divNav ul li ul 
+{
+	display: none;
+}
+#divNav ul li:hover ul{
+	display: block;
+	
+}
+#divNav ul li:hover ul{
+	position: absolute;
+}
+#divSideContentLeft {
+    display:block;
+	width:200px;
+	height:500px;
+background:lightcyan;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	color:white;
+	border-top-left-radius: 0px;
+	text-decoration:none;
+	border:1px Solid lightseagreen;
+	margin-bottom:195px;
+	margin-top:-2px;
+	margin-left:-30px;
+	}
+	
+#divSideContentLeft a{
+   
+	font-size:1.2em;
+	text-decoration: blink;
+	list-style-type:none;
+	
+	}
+#divSideContentLeft a:hover{
+    color:#a8e1cc ;
+	font-size:em;
+	font-weight:bold;
+	background:#fdfdfd;
+	text-decoration:red;
+	
+	}
+	#dmu a:hover{
+		
+		background:#37a851;
+	}
+#divContentCenter {
+    display:block;
+	width:1040px;
+height:500px;
+	line-height:20px;
+	color:#fdfdfd;
+   overflow-x: scroll;
+   overflow-y: scroll;
+		background-color:#ffffff;
+		color: #242322;
+	margin-left:-966px;
+	margin-right:-810px;
+	margin-bottom: 160px;
+	border-radius: 8px;
+	margin-top:-40px;
+	}
+#divContentCenter p{
+     display:block;
+	 
+      font-size:1.2em;
+		margin-left:10px;
+		margin-right:-15px;
+		
+		line-height:20px;
+		
+	}
+	
+#divContentCenter h1{
+        display:block;
+		font-size:1.2em;
+	    margin:25px;
+		font-weight:bold;
+		text-align: left;
+		border-radius:30px;
+	}
+	
+			#framess{
+				border-color: #ff0000;
+				border-radius: 8px
+			}
+	#content
+{
+	background-color: #dfdfdf;
+	width: 760px;
+	height: 650px;
+	margin-left: 220px;
+	margin-top: 18px;
+	overflow-x: scroll;
+	overflow-y: scroll;
+}
+			
+#divSideContentRight {
+    display:block;
+	width:216px;
+	height:500px;
+	line-height:25px;
+	margin-top:-33px;
+	margin-left:-145px;
+	margin-bottom:170px;
+	background:lightcyan;
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 10px;
+	color:#0e7497;
+	text-decoration:none;
+	border:1px Solid lightseagreen;
+	
+	}
+	#divSideContentRight form{
+		margin-left:27px;
+		background-color: #bdc2b1;
+		height: 258px;
+		margin-top: 15px;
+		margin-right: 10px;
+		margin-left: -5px;
+		border-radius: 3px;
+		width: 213px;
+	}
+
+	
+	#divSideContentRight table td{
+		width: 1px;
+		align-content: center;
+		text-align: left;
+		
+	}
+	
+#divFooter {
+		background:lightcyan;
+		display:block;
+		width:1240px;
+		height:82px;
+		border:1px Solid lightseagreen;
+		border-bottom-left-radius:20px;
+		border-bottom-right-radius:20px;
+		font-family:Giorgia;
+		line-height:20px;
+		font-weight:bold;
+		text-decoration-color: #ff0000;
+		
+		margin-left:-30px;
+		margin-right: -80px;
+		margin-top: -200px;
+		
+		
+}		
+		
+		
